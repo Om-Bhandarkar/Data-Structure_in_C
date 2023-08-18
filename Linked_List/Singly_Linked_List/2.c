@@ -2,38 +2,38 @@
 #include <string.h>
 #include <stdlib.h>
 
-struct Node {
+struct College {
     int stud_id;
     char branch[20];
     float cgpa;
-    struct Node *next;
+    struct College *next;
 };
 
 int main() {
-    struct Node *head = NULL;
+    struct College *head = NULL;
 
-    struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
+    struct College *newNode = (struct College *)malloc(sizeof(struct College));
     newNode->stud_id = 1206;
     strcpy(newNode->branch, "E&TC");
     newNode->cgpa = 7.0;
     newNode->next = NULL;
     head = newNode;
 
-    newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode = (struct College *)malloc(sizeof(struct College));
     newNode->stud_id = 1306;
     strcpy(newNode->branch, "COMP");
     newNode->cgpa = 8.0;
     newNode->next = NULL;
     head->next = newNode;
 
-    newNode = (struct Node *)malloc(sizeof(struct Node));
+    newNode = (struct College *)malloc(sizeof(struct College));
     newNode->stud_id = 1406;
     strcpy(newNode->branch, "MECH");
     newNode->cgpa = 9.0;
     newNode->next = NULL;
     head->next->next = newNode;
 
-    struct Node *temp = head;
+    struct College *temp = head;
     while (temp -> next != NULL) {
         printf("|%d ", temp->stud_id);
         printf("%s ", temp->branch);

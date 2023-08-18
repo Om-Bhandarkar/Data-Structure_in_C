@@ -30,5 +30,4 @@ void main(){
     }
         printf("|%d|",temp->data);
     printf("\n");
-
 }

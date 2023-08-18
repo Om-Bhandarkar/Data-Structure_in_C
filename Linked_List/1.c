@@ -11,7 +11,7 @@ void main(){
     newNode -> data = 10;
     newNode -> next = NULL;
     head = newNode;
-
+    
     newNode = (struct Node *)malloc(sizeof(struct Node));    
     newNode -> data = 20;
     newNode -> next = NULL;

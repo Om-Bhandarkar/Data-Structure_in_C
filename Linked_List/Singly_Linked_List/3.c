@@ -39,20 +39,11 @@ void printLL(){
         printf(" %f | ",temp->cgpa);
         temp = temp -> next;
     }
-        
-
-    
 }
 int main() {
-    int node;
-    printf("Enter No. of Nodes : ");
-    scanf("%d",&node);
-    for(int i=1;i<=node;i++){
-        addNode();
-    }
-    // addNode();
-    // addNode();
-    // addNode();
+    addNode();
+    addNode();
+    addNode();
     printLL();
     return 0;
 }

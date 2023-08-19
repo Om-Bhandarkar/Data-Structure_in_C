@@ -7,6 +7,7 @@ struct Employee{
     struct Employee *next;
 };
 struct Employee *head = NULL;
+
 void addNode(){
     struct Employee *newNode = (struct Employee *)malloc(sizeof(struct Employee));
     printf("Enter Employee Name : ");

@@ -13,7 +13,8 @@ struct College *head = NULL;
 void addNode(){
     struct College *newNode = (struct College *)malloc(sizeof(struct College));
     printf("Enter your Branch : ");
-    fgets(newNode->branch,20,stdin);
+    scanf("%[^\n]",newNode->branch);
+    // fgets(newNode->branch,20,stdin);
     printf("Enter the Student ID : ");
     scanf("%d",&newNode->stud_id);
     printf("Enter your cgpa : ");
@@ -33,17 +34,25 @@ void addNode(){
 void printLL(){
     struct College *temp = head;
     while(temp != NULL){
-        printf("%s ",temp->branch);
+        printf("| %s ",temp->branch);
         printf(" %d ",temp->stud_id);
-        printf(" %f ",temp->cgpa);
+        printf(" %f | ",temp->cgpa);
         temp = temp -> next;
     }
-    printf("\n");
+        
+
+    
 }
 int main() {
-    addNode();
-    addNode();
-    addNode();
+    int node;
+    printf("Enter No. of Nodes : ");
+    scanf("%d",&node);
+    for(int i=1;i<=node;i++){
+        addNode();
+    }
+    // addNode();
+    // addNode();
+    // addNode();
     printLL();
     return 0;
 }

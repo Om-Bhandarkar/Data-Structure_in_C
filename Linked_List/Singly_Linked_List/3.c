@@ -24,7 +24,8 @@ void addNode(){
     if(head == NULL){
         head = newNode;
     }else{
-        struct College *temp = head;
+        struct College 
+        8*temp = head;
         while(temp -> next != NULL){
             temp = temp -> next;
         }

@@ -41,7 +41,7 @@ void addAtFirst(){
     head = newNode;
 }
 void addAtLast(){
-    printf("For Last Node")
+    printf("For Last Node");
     node *newNode = createNode();
     node *temp = head;
     while(temp->next!=NULL){

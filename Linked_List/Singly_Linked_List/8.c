@@ -41,6 +41,7 @@ void addAtFirst(){
     head = newNode;
 }
 void addAtLast(){
+    printf("For Last Node")
     node *newNode = createNode();
     node *temp = head;
     while(temp->next!=NULL){
@@ -77,6 +78,19 @@ int countNode(){
     }
     printf("Count = %d\n",count);
 }
+void deleteAtFirst(){
+    node*temp = head;
+    head = head -> next;
+    free(temp);
+}
+void deleteAtLast(){
+    node *temp1 = head;
+    while(temp1->next->next!=NULL){
+        temp1=temp1->next;
+    }
+    free(temp1->next);
+    temp1->next=NULL;
+}
 int main(){
     int node;
     printf("How Many Node You Have Created ?\n");
@@ -91,6 +105,8 @@ int main(){
     addAtLast();
     printLL();
     countNode();
-    
+    deleteAtFirst();
+    printLL();
+    deleteAtLast();
+    printLL();
 }
-

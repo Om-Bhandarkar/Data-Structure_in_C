@@ -91,22 +91,65 @@ void deleteAtLast(){
     free(temp1->next);
     temp1->next=NULL;
 }
-int main(){
-    int node;
-    printf("How Many Node You Have Created ?\n");
-    scanf("%d",&node);
-    for(int i=1;i<=node;i++){
-        addNode();
+int addAtPosition(int pos){
+    int count = countNode();
+    if(pos==1){
+        addAtFirst();
+    }else if (pos==count+1){
+        addAtLast();
+    }else{
+        node *newNode = (node *)malloc(sizeof(node));
+        node *temp = head;
+        while(pos-2){
+            temp = temp -> next;
+            pos--;
+        }
+        newNode-> next = temp -> next;
+        temp -> next = newNode;
     }
-    printLL();
-    addAtFirst();
-    printLL();
-    countNode();
-    addAtLast();
-    printLL();
-    countNode();
-    deleteAtFirst();
-    printLL();
-    deleteAtLast();
-    printLL();
+    return 0;
+}
+int main(){
+    char choice;
+    do{
+        printf("==========Singly Linked List==========\n");
+        printf("\t1.addNode\n\t2.addAtFirst\n\t3.addAtPosition\n\t4.addAtLast\n\t5.deleteAtFirst\n\t6.deleteAtLast\n\t7.printLL\n");
+        int ch;
+        printf("Enter your choice :");
+        scanf("%d",&ch);
+        switch (ch){
+        case 1:
+                addNode();
+                break;
+        case 2:
+                addAtFirst();
+                break;
+        case 3:
+            {
+                int pos;
+                printf("Enter Position :\n");
+                scanf("%d",&pos);
+                addAtPosition(pos);
+            }
+                break;
+        case 4:
+                addAtLast();
+                break;
+        case 5:
+                deleteAtFirst();
+                break;
+        case 6:
+                deleteAtLast();
+                break;
+        case 7:
+                printLL();
+                break;
+        
+        default:
+                printf("Wrong Input\n");
+        }
+        printf("Do you want to continue\n");
+        getchar();
+        scanf("%c",&choice);
+    }while(choice=='y' || choice=='Y');
 }

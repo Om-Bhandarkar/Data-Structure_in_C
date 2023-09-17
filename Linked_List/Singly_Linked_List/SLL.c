@@ -41,7 +41,7 @@ void addAtFirst(){
     head = newNode;
 }
 void addAtLast(){
-    printf("For Last Node");
+    printf("For Last Node ");
     node *newNode = createNode();
     node *temp = head;
     while(temp->next!=NULL){
@@ -106,6 +106,27 @@ int addAtPosition(int pos){
         }
         newNode-> next = temp -> next;
         temp -> next = newNode;
+    }
+    return 0;
+}
+int deleteAtPos(int pos){
+    int count = countNode();
+    if(head==NULL || pos<=0 || pos>=count+1){
+        printf("Invalid Position");
+        return -1;
+    }else if(pos==1){
+        deleteAtFirst();
+    }else if(pos==count){
+        deleteAtLast();
+    }else{
+        node *temp =head;
+        while(pos-2){
+            temp = temp -> next;
+            temp--;
+        }
+        node *temp1 = temp;
+        temp -> next = temp -> next -> next;
+        free(temp1 -> next);
     }
     return 0;
 }

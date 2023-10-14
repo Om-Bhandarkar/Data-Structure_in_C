@@ -28,6 +28,7 @@ void addNode(){
         temp -> next = newNode;
     }
 }
+
 void printLL(){
     struct Employee *temp = head;
     while(temp != NULL){
